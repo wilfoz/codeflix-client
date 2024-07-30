@@ -37,13 +37,11 @@ export default function Header() {
         <NavLinks />
       </div>
       <div className='flex items-center space-x-2 md:space-x-8'>
-        <Suspense>
-          <SearchForm
-            onSearch={onSearch}
-            searchTerm={searchTerm}
-            onSearchTermChange={onSearchTermChange}
-          />
-        </Suspense>
+        <SearchForm
+          onSearch={onSearch}
+          searchTerm={searchTerm}
+          onSearchTermChange={onSearchTermChange}
+        />
         <UserProfile />
       </div>
     </header>

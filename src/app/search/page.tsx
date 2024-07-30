@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { searchMovies } from '../services/MovieService';
 import Header from '../components/Header';
 import { MovieCard } from '../components/MovieCard';
@@ -21,7 +21,9 @@ export default async function SearchResults({ searchParams }: ISearchProps) {
     return (
       <div>
         <div className='relative bg-gradient-to-b pb-8'>
-          <Header />
+          <Suspense>
+            <Header />
+          </Suspense>
           <main className='relative mb-48 mt-20 h-screen pl-4 lg:pl-16'>
             <h1 className='mb-4 text-2xl font-bold'>
               Search results for: <span className='text-red-500'>{title}</span>
