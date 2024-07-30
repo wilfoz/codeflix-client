@@ -12,8 +12,9 @@ interface ISearchProps {
   searchParams: ISearchParams;
 }
 
-export default async function SearchResults(searchParams: ISearchParams) {
+export default async function SearchResults({ searchParams }: ISearchProps) {
   const { title, genre } = searchParams;
+
   const movies = await searchMovies(title, genre);
 
   if (movies.length === 0) {
